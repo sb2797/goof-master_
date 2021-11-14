@@ -15,15 +15,13 @@ steps:
 
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: '6'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: AzureStorage
-    azureResourceManagerEndpoint: myARMServiceConnection
-    azureStorageAccountName: myAzureStorageAccountName
-    azureContainerName: myAzureStorageContainerName
-    azureCommonVirtualFile: 'jdk1.6.0_45.zip'
-    jdkDestinationDirectory: '$(agent.toolsDirectory)/jdk6'
-    cleanDestinationDirectory: false
+    versionSpec: "11"
+    jdkArchitectureOption: x64
+    jdkSourceOption: LocalDirectory
+    jdkFile: "/builds/openjdk-11.0.2_linux-x64_bin.tar.gz"
+    jdkDestinationDirectory: "/builds/binaries/externals"
+    cleanDestinationDirectory: true
+
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
